@@ -1,5 +1,6 @@
 import React from 'react'
 import icon1 from '../../assets/images/setting-icon.png'
+import SliderRouter from '../sliderRouter/slider_router'
 
 const Slidebar=()=> {
   return (
@@ -34,13 +35,13 @@ const Slidebar=()=> {
                 <button className='py-[4px] px-[4px] text-[12px] rounded-md'>Share</button>
                 </div>
                 <div className='w-full'>
-                <button className='py-[4px] px-[4px] text-[12px] rounded-md'>Contaent</button>
+                <button className='py-[4px] px-[4px] text-[12px] rounded-md'>Replies</button>
                 </div>
             </div>
             </div>
            
            <div className='flex-1 border border-black'>
-
+                        <SliderRouter/>
            </div>
         
         </div>
