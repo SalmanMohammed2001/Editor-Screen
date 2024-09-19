@@ -3,15 +3,35 @@ import icon1 from '../../assets/images/setting-icon.png'
 import SliderRouter from '../sliderRouter/slider_router'
 import { Link } from 'react-router-dom'
 
+
+const navLink=[
+    {
+        path :'/contaent',
+        display:'contaent'
+    },
+    {
+        path :'/design',
+        display:'Design'
+    },
+    {
+        path :'/share',
+        display:'Share'
+    },
+    {
+        path :'/replies',
+        display:'Replies'
+    }
+]
+
 const Slidebar=()=> {
   return (
     <div className='w-full h-full border border-green-500 p-5'>
-        <div className='h-[100%] border flex flex-col'>
+        <div className='h-[100%] border flex flex-col gap-2'>
 
-            <div className='border pt-5 pb-[40px]'>
+            <div className='border pt-5 pb-[50px]'>
             <div className='flex  items-center  justify-between border   mb-3'>
                 <div className='flex  justify-between items-center'>
-                <button className=" text-gray-800 text-[12px] py-2 px-4 rounded inline-flex items-center">
+                <button className=" text-gray-800 text-[12px] py-2  rounded inline-flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" className="h-3 w-3 mr-1"><path d="M10.362 1.093a.75.75 0 0 0-.724 0L2.523 5.018 10 9.143l7.477-4.125-7.115-3.925ZM18 6.443l-7.25 4v8.25l6.862-3.786A.75.75 0 0 0 18 14.25V6.443ZM9.25 18.693v-8.25l-7.25-4v7.807a.75.75 0 0 0 .388.657l6.862 3.786Z"></path></svg>
   <span>Document</span>
 </button>
@@ -26,7 +46,21 @@ const Slidebar=()=> {
 
             
             <div className=' flex w-[100%] items-center justify-between  bg-black-rgba rounded-md p-[5px] gap-[10px] '>
-                <div className='w-full'>
+
+
+                {
+                    navLink.map((link,index)=>{
+                        return(
+                            
+                            <Link key={index} to={link.path}>
+                            <button className='py-[5px] px-[10px] text-[12px] rounded-md'>{link.display}</button>
+                            </Link>
+                      
+                      
+                        );
+                    })
+                }
+                {/* <div className='w-full'>
                     <Link to={'/contaent'}>
                     <button className='py-[4px] px-[4px] bg-white text-[12px] rounded-md'>Contaent</button>
                     </Link>
@@ -46,7 +80,7 @@ const Slidebar=()=> {
                 <Link to={'/replies'}>
                 <button className='py-[4px] px-[4px] text-[12px] rounded-md'>Replies</button>
                 </Link>
-                </div>
+                </div> */}
             </div>
             </div>
            
