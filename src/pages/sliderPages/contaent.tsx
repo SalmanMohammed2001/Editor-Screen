@@ -6,18 +6,11 @@ import { Link } from 'react-router-dom'
 import {setRoute} from '../../slice/welcomePageSliderSlice'
 
 const Contaent = () => {
- 
-
-
-  
+   
  
   const dispatch=useDispatch();
 
 
-
-    // useEffect(()=>{
-    //   console.log(pageRoute);
-    // },[pageRoute])
  
   return (
     <section className='  '>
@@ -45,8 +38,8 @@ const Contaent = () => {
     
     <div className='flex-1 flex  justify-center items-center'>
     <Link to={"/contaent"} className='w-full'><button className=' w-full text-[12px]' onClick={()=>{
-      dispatch(setRoute("open"))
-      
+       dispatch(setRoute("Form"))
+     
     }}>Welcome Screen</button>  </Link>    
         </div>
         
@@ -62,10 +55,14 @@ const Contaent = () => {
    
 
 <div className='flex-1 flex  justify-center items-center'>
-<Link to={"/contaent/email"} className=' w-full'>  <button className=' w-full text-[12px]'>Email</button> </Link>   
+<Link to={"/contaent/email"} className=' w-full'>  <button className=' w-full text-[12px]' onClick={()=>{
+  dispatch(setRoute("emailForm"))
+}}>Email</button> </Link>   
       
     </div>
-    
+
+
+
 </div>   
 
 </div>

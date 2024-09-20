@@ -28,7 +28,7 @@ const navLink=[
 
 const Slidebar=()=> {
 
-    const pageRoute=useSelector(((state)=>state.WelcomePageSliderInfo.welcomePageSliderRoute));
+    const FormpageRoute=useSelector(((state)=>state.WelcomePageSliderInfo.welcomePageSliderRoute));
 
 
     
@@ -87,9 +87,16 @@ const Slidebar=()=> {
       
 
 {
-    pageRoute == "open" &&     <div className='w-full h-full bg-white absolute top-0'>
+    FormpageRoute == "Form" &&     <div className='w-full h-full bg-white absolute top-0'>
          <WelcomePageSlider/> 
-          {/* <EmailPageSlider/> */}
+       
+      </div>
+}
+
+{
+    FormpageRoute == "emailForm" &&     <div className='w-full h-full bg-white absolute top-0'>
+         <EmailPageSlider/> 
+       
       </div>
 }
 

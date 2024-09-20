@@ -1,8 +1,12 @@
 import React from 'react'
 import settion_icon from "../../assets/images/fill-setion-icon.png"
 import close_icon from "../../assets/images/close-icon.png"
+import { useDispatch } from 'react-redux';
+import {setRoute} from '../../slice/welcomePageSliderSlice'
 
 const EmailPageSlider = () => {
+
+  const dispatch=useDispatch();
   return (
     <div className='w-full h-full border border-green-500  relative p-3'>
   
@@ -16,7 +20,9 @@ const EmailPageSlider = () => {
 
 
         <div className=' flex-1 flex items-center justify-end'>
-         <div className='shadow-lg border rounded-md py-2 px-2'>
+         <div className='shadow-lg border rounded-md py-2 px-2' onClick={()=>{
+           dispatch(setRoute("close"))
+         }}>
       <img src={close_icon} alt="" className='w-4' />
          </div>
         </div>

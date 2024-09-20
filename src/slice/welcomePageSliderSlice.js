@@ -12,12 +12,12 @@ export const welcomePageSliderSlice= createSlice({
         setRoute:(state,action)=>{
             state.welcomePageSliderRoute=action.payload;
         },
-        setOpenRoute:(state,action)=>{
-            state.welcomePageSliderRoute="open";
-        },
-        setCloseRoute:(state,action)=>{
-            state.welcomePageSliderRoute="close";
-        }
+        // setOpenRoute:(state,action)=>{
+        //     state.welcomePageSliderRoute="open";
+        // },
+        // setCloseRoute:(state,action)=>{
+        //     state.welcomePageSliderRoute="close";
+        // }
 
     }
 });

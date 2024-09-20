@@ -1,16 +1,74 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import settion_icon from "../../assets/images/fill-setion-icon.png"
 import close_icon from "../../assets/images/close-icon.png"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {setRoute} from '../../slice/welcomePageSliderSlice'
-
+import {setUser} from '../../slice/userSlice'
 const WelcomePageSlider = () => {
+
+    const value=useSelector(((state)=>state.userInfo.users));
 
  
     const dispatch=useDispatch();
 
+   // const [previewUrl, setPreviewUrl] = useState("");
+    const[formData,setFormData]=useState({
+        title:value.title,
+        description:value.description,
+        buttonText:value.buttonText,
+        imageUrl:value.imageUrl
+    })
+
+
+ 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+       setFormData({...formData, [e.target.name]: e.target.value});
+ 
+    }
+
+   
+
+      useEffect(() => {
+
+        dispatch(setUser(formData)) 
+
+        console.log(value);
+        console.log("salman");
+        
+      },[formData]); 
+
+
+      const handleFileInputChange = async (e: any) => {
+        const file: any = e.target.files[0]
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          //  setPreviewUrl(reader.result);
+            setFormData({...formData,imageUrl:reader.result})
+           ;
+           
+        };
+        reader.readAsDataURL(file);
+   
+
+       
+
+
+      
+        
+        
+
+        
+     
+        //  setPreviewUrl(data.url)
+        //  setSelectFile(data.url)
+        //  setFormData({...formData,photo:data.url})
+
+    }
+
+  
   return (
-    <div className='w-full h-full border border-green-500  relative p-3'>
+    <div className='w-full h-full  relative p-3'>
   
         <div className='  flex items-center mb-5'>
             <div className='  flex  items-center gap-2 ' >
@@ -32,25 +90,31 @@ const WelcomePageSlider = () => {
         </div>
 
         <div className="flex flex-col  ">
+        <form action="">
+
         <div className="flex gap-2 my-1 text-sm flex-col items-start">
         <p className="text-sm font-medium">Title</p>
-        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" value="Welcome to our form" ></input>
+        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" name='title' value={value.title}      onChange={handleInputChange}  ></input>
 
         <p className="text-sm font-medium">Description</p>
-        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" value="This is a description of the form" ></input>
+        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" name='description' value={value.description}      onChange={handleInputChange}></input>
 
         <p className="text-sm font-medium">Button Text</p>
-        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" value="Start" ></input>
+        <input className="w-full p-2 border border-gray-300 rounded-md focus:border-black focus:outline-none" name='buttonText'  value={value.buttonText}    onChange={handleInputChange}></input>
       
         <label htmlFor="imageId"  className="flex items-center gap-2 p-1 font-medium border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black" ><span role="img" aria-label="upload" className="anticon anticon-upload"><svg viewBox="64 64 896 896" focusable="false" data-icon="upload" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path></svg></span>Upload</label>
-
-        <input type="file" id="imageId" accept="image/*" className="hidden"></input>  
+        <input type="file" id="imageId" accept="image/*" className="hidden" onChange={handleFileInputChange}></input>  
         </div>
+    
+      
+        </form>
+    
         </div>
 
-        <div className='' >
+        {
+            formData.imageUrl != "" &&   <div className='' >
             <div className="mt-4">
-                <img src={close_icon} alt="Image Preview" className="h-auto max-w-full border border-gray-300 rounded-lg"/>
+                <img src={formData.imageUrl} alt="Image Preview" className="h-auto max-w-full border border-gray-300 rounded-lg"/>
                <div className='flex items-center justify-center'>
                <button className="p-1 mt-2 font-medium border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black" >Remove Image</button></div>
           
@@ -65,11 +129,14 @@ const WelcomePageSlider = () => {
                     </div>
        
         </div>
+        }
+
+      
 
 
         <div className=' mt-5 flex justify-between'>
             <button className=' bg-black py-[8px] px-[50px] text-white rounded-md'>Save</button>
-            <button className=' py-[8px] px-[50px] text-red-500 rounded-md hover:bg-red-200'>Save</button>
+            <button className=' py-[8px] px-[50px] text-red-500 rounded-md hover:bg-red-200' >Save</button>
 
 
         </div>
