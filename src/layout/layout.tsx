@@ -1,5 +1,6 @@
 import React from 'react'
 import Slidebar from '../components/slidebar/slidebar'
+import Routers from '../route/Routers'
 
 const Layout = () => {
   return (
@@ -8,7 +9,7 @@ const Layout = () => {
             <Slidebar/>
            </div>
         <div className='h-[100%] flex-1  border'> 
-      
+            <Routers/>
         </div>
     </div>
   )
