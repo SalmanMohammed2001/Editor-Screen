@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {setRoute} from '../../slice/welcomePageSliderSlice'
 import {setUser} from '../../slice/userSlice'
 import {removeImageUrl} from '../../slice/userSlice'
+import {setImageRoute} from "../../slice/imageSectionSlice"
 
 
 const WelcomePageSlider = () => {
 
     const value=useSelector(((state)=>state.userInfo.users));
+   
 
  
     const dispatch=useDispatch();
@@ -119,10 +121,21 @@ const WelcomePageSlider = () => {
                </div>
                 <div className="flex items-center gap-2 mt-2">
                     <p className="text-sm font-medium">Placement</p>
-                <button className="p-1 border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black">
+                <button onClick={()=>{
+                   dispatch(setImageRoute('default'))
+                  console.log("salman");
+                  
+                  
+                }} className="p-1 border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1C14 0.447715 14.4477 0 15 0H26C27.1046 0 28 0.895431 28 2V18C28 19.1046 27.1046 20 26 20H15C14.4477 20 14 19.5523 14 19V1ZM3 11.75C3 11.3358 3.33579 11 3.75 11H8.25C8.66421 11 9 11.3358 9 11.75C9 12.1642 8.66421 12.5 8.25 12.5H3.75C3.33579 12.5 3 12.1642 3 11.75ZM3.75 8C3.33579 8 3 8.33579 3 8.75C3 9.16421 3.33579 9.5 3.75 9.5H10.25C10.6642 9.5 11 9.16421 11 8.75C11 8.33579 10.6642 8 10.25 8H3.75Z" fill="currentColor"></path></svg></button>
-                    <button className="p-1 border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 2C0 0.895431 0.895431 0 2 0H13C13.5523 0 14 0.447716 14 1V19C14 19.5523 13.5523 20 13 20H2C0.895431 20 0 19.1046 0 18V2ZM17 11.75C17 11.3358 17.3358 11 17.75 11H22.25C22.6642 11 23 11.3358 23 11.75C23 12.1642 22.6642 12.5 22.25 12.5H17.75C17.3358 12.5 17 12.1642 17 11.75ZM17.75 8C17.3358 8 17 8.33579 17 8.75C17 9.16421 17.3358 9.5 17.75 9.5H24.25C24.6642 9.5 25 9.16421 25 8.75C25 8.33579 24.6642 8 24.25 8H17.75Z" fill="currentColor"></path></svg></button>
+                   
+                    <button onClick={()=>{
+                  dispatch(setImageRoute('change'))
+                  
+                }} className="p-1 border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 28 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 2C0 0.895431 0.895431 0 2 0H13C13.5523 0 14 0.447716 14 1V19C14 19.5523 13.5523 20 13 20H2C0.895431 20 0 19.1046 0 18V2ZM17 11.75C17 11.3358 17.3358 11 17.75 11H22.25C22.6642 11 23 11.3358 23 11.75C23 12.1642 22.6642 12.5 22.25 12.5H17.75C17.3358 12.5 17 12.1642 17 11.75ZM17.75 8C17.3358 8 17 8.33579 17 8.75C17 9.16421 17.3358 9.5 17.75 9.5H24.25C24.6642 9.5 25 9.16421 25 8.75C25 8.33579 24.6642 8 24.25 8H17.75Z" fill="currentColor"></path></svg></button>
+                   
+                   
                     </div>
        
         </div>
