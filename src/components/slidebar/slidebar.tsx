@@ -27,7 +27,7 @@ const navLink=[
 
 const Slidebar=()=> {
   return (
-    <div className='w-full h-full border   relative'>
+    <div className='w-full h-full    relative'>
    
       <div className='p-3'>
       <div className='h-[100%]  flex flex-col gap-2'>
