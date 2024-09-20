@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import menu_icon from '../../assets/images/menu-icon.png'
 import fill_setion_icon from '../../assets/images/fill-setion-icon.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import {setRoute} from '../../slice/welcomePageSliderSlice'
+
 const Contaent = () => {
+ 
+
+
+  
+ 
+  const dispatch=useDispatch();
+
+
+
+    // useEffect(()=>{
+    //   console.log(pageRoute);
+    // },[pageRoute])
+ 
   return (
     <section className='  '>
         <div>
@@ -26,8 +43,11 @@ const Contaent = () => {
          
        
     
-    <div className='flex-1 flex  justify-center'>
-            <button className=' w-full text-[12px]'>Welcome Screen</button>      
+    <div className='flex-1 flex  justify-center items-center'>
+    <Link to={"/contaent"} className='w-full'><button className=' w-full text-[12px]' onClick={()=>{
+      dispatch(setRoute("open"))
+      
+    }}>Welcome Screen</button>  </Link>    
         </div>
         
     </div>   
@@ -41,8 +61,8 @@ const Contaent = () => {
      
    
 
-<div className='flex-1 flex  justify-center'>
-        <button className=' w-full text-[12px]'>Email</button>
+<div className='flex-1 flex  justify-center items-center'>
+<Link to={"/contaent/email"} className=' w-full'>  <button className=' w-full text-[12px]'>Email</button> </Link>   
       
     </div>
     

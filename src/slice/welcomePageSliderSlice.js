@@ -6,7 +6,7 @@ let  initialState={
 
 
 export const welcomePageSliderSlice= createSlice({
-    nmae:"welcomePageSliderRoute",
+    name:"welcomePageSliderRoute",
     initialState,
     reducers:{
         setRoute:(state,action)=>{

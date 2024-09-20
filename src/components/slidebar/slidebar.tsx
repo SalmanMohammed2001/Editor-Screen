@@ -4,6 +4,7 @@ import SliderRouter from '../sliderRouter/slider_router'
 import { Link } from 'react-router-dom'
 import WelcomePageSlider from '../../pages/welcomePageSlider/welcomePageSlider'
 import EmailPageSlider from '../../pages/emailPageSlider/emailPageSlider'
+import { useSelector } from 'react-redux'
 
 
 const navLink=[
@@ -26,6 +27,13 @@ const navLink=[
 ]
 
 const Slidebar=()=> {
+
+    const pageRoute=useSelector(((state)=>state.WelcomePageSliderInfo.welcomePageSliderRoute));
+
+
+    
+    
+
   return (
     <div className='w-full h-full    relative'>
    
@@ -77,11 +85,14 @@ const Slidebar=()=> {
       </div>
 
       
-{/* 
- <div className='w-full h-full bg-white absolute top-0'>
-       <WelcomePage/> 
-        <EmailPage/>
-    </div> */}
+
+{
+    pageRoute == "open" &&     <div className='w-full h-full bg-white absolute top-0'>
+         <WelcomePageSlider/> 
+          {/* <EmailPageSlider/> */}
+      </div>
+}
+
      
  
 
