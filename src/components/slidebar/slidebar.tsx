@@ -2,8 +2,8 @@ import React from 'react'
 import icon1 from '../../assets/images/setting-icon.png'
 import SliderRouter from '../sliderRouter/slider_router'
 import { Link } from 'react-router-dom'
-import WelcomePage from '../../pages/welcomePageSlider/welcomePageSlider'
-import EmailPage from '../../pages/emailPageSlider/emailPageSlider'
+import WelcomePageSlider from '../../pages/welcomePageSlider/welcomePageSlider'
+import EmailPageSlider from '../../pages/emailPageSlider/emailPageSlider'
 
 
 const navLink=[
@@ -77,12 +77,12 @@ const Slidebar=()=> {
       </div>
 
       
-
-    {/* <div className='w-full h-full bg-white absolute top-0'>
+{/* 
+ <div className='w-full h-full bg-white absolute top-0'>
        <WelcomePage/> 
         <EmailPage/>
-    </div>
-     */}
+    </div> */}
+     
  
 
     </div>
