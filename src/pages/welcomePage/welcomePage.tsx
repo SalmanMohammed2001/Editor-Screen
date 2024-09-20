@@ -19,7 +19,7 @@ const WelcomePage = () => {
              <button className='py-2 px-3 shadow-xl rounded-md bg-black text-white'>{value.buttonText}</button>
             </div>
             <div className=' min-h-[200px] w-full flex justify-center items-center p-2'>
-             <img src={icon} className='h-[320px]' alt="" />
+             <img src={value.imageUrl} className='h-[320px]' alt="" />
             </div>
         </div>
     </section>

@@ -17,13 +17,13 @@ export  const userSlice= createSlice({
         setUser:(state,action)=>{
            state.users = { ...state.users, ...action.payload }; 
         },
-        // deleteUser:(state,action)=>{
-        //     state.users =state.users.filter((user,index)=>index !==action.payload);
-        // }
+        removeImageUrl: (state) => {
+            state.users.imageUrl = ""; 
+        },
     }
 });
 
-export  const{setUser}=userSlice.actions;
+export  const{setUser,removeImageUrl}=userSlice.actions;
 
 export  default  userSlice.reducer;
 

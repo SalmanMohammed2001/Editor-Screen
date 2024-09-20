@@ -4,6 +4,9 @@ import close_icon from "../../assets/images/close-icon.png"
 import { useDispatch, useSelector } from 'react-redux';
 import {setRoute} from '../../slice/welcomePageSliderSlice'
 import {setUser} from '../../slice/userSlice'
+import {removeImageUrl} from '../../slice/userSlice'
+
+
 const WelcomePageSlider = () => {
 
     const value=useSelector(((state)=>state.userInfo.users));
@@ -34,6 +37,9 @@ const WelcomePageSlider = () => {
 
         console.log(value);
         console.log("salman");
+
+
+        
         
       },[formData]); 
 
@@ -50,19 +56,7 @@ const WelcomePageSlider = () => {
         };
         reader.readAsDataURL(file);
    
-
        
-
-
-      
-        
-        
-
-        
-     
-        //  setPreviewUrl(data.url)
-        //  setSelectFile(data.url)
-        //  setFormData({...formData,photo:data.url})
 
     }
 
@@ -114,9 +108,12 @@ const WelcomePageSlider = () => {
         {
             formData.imageUrl != "" &&   <div className='' >
             <div className="mt-4">
-                <img src={formData.imageUrl} alt="Image Preview" className="h-auto max-w-full border border-gray-300 rounded-lg"/>
+                <img src={formData.imageUrl} alt="Image Preview" className=" max-w-full border border-gray-300 w-full h-[180px] bg-cover  rounded-lg"/>
                <div className='flex items-center justify-center'>
-               <button className="p-1 mt-2 font-medium border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black" >Remove Image</button></div>
+               <button className="p-1 mt-2 font-medium border border-gray-300 rounded-md focus:border-black focus:outline-none hover:border-black" onClick={()=>{
+                            dispatch(removeImageUrl())
+                            formData.imageUrl="";
+               }}>Remove Image</button></div>
           
                
                </div>
