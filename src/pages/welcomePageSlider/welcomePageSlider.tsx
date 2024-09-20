@@ -6,6 +6,7 @@ import {setRoute} from '../../slice/welcomePageSliderSlice'
 import {setUser} from '../../slice/userSlice'
 import {removeImageUrl} from '../../slice/userSlice'
 import {setImageRoute} from "../../slice/imageSectionSlice"
+import { Link } from 'react-router-dom';
 
 
 const WelcomePageSlider = () => {
@@ -145,8 +146,10 @@ const WelcomePageSlider = () => {
 
 
         <div className=' mt-5 flex justify-between'>
-            <button className=' bg-black py-[8px] px-[50px] text-white rounded-md'>Save</button>
-            <button className=' py-[8px] px-[50px] text-red-500 rounded-md hover:bg-red-200' >Save</button>
+          <Link to={"/"}>  <button className=' bg-black py-[8px] px-[50px] text-white rounded-md' onClick={()=>{
+               dispatch(setRoute("close"))
+          }}>Save</button> </Link>
+            <button className=' py-[8px] px-[50px] text-red-500 rounded-md hover:bg-red-200' >Delete</button>
 
 
         </div>

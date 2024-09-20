@@ -11,6 +11,7 @@ const SliderRouter = () => {
     <div>
         <Routes>
         <Route path="/"  element={<Contaent/>} />
+        
         <Route path="/contaent"  element={<Contaent/>} >
         <Route path="email" element={<EmailPage />} />
         </Route>

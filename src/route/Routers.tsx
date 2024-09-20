@@ -7,6 +7,7 @@ import EmailPage from '../pages/emailPage/emailPage';
 export const Routers = () => {
   return (
     <Routes>
+       <Route path="/"  element={<WelcomePage/>} />
              <Route path="/contaent"  element={<WelcomePage/>} />
              <Route path="/design"  element={<WelcomePage/>} />
              <Route path="/share"  element={<WelcomePage/>} />
