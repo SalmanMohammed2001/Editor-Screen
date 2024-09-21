@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import  {useEffect, useState} from 'react'
 import {IoMdArrowForward} from 'react-icons/io'
 import {useDispatch, useSelector} from 'react-redux';
 import {setDetails} from '../../slice/emailPageSliderSlice.ts'

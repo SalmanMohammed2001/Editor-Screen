@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import settion_icon from "../../assets/images/fill-setion-icon.png"
 import close_icon from "../../assets/images/close-icon.png"
 import {useDispatch, useSelector} from 'react-redux';

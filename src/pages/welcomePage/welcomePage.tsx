@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import icon from "../../assets/images/menu-icon.png"
+
 import {useSelector} from 'react-redux';
 
 

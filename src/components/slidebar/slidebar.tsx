@@ -1,7 +1,7 @@
-import React from 'react'
+
 import icon1 from '../../assets/images/setting-icon.png'
 import SliderRouter from '../sliderRouter/slider_router'
-import {Link, NavLink} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import WelcomePageSlider from '../../pages/welcomePageSlider/welcomePageSlider'
 import EmailPageSlider from '../../pages/emailPageSlider/emailPageSlider'
 import {useSelector} from 'react-redux'

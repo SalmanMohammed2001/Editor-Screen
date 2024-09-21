@@ -1,6 +1,6 @@
 
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit";
 
 
 interface WelcomePageSliderState {
@@ -20,13 +20,7 @@ export const welcomePageSliderSlice = createSlice({
     setRoute: (state, action) => {
       state.welcomePageSliderRoute = action.payload;
     },
-    // Optional: If you want specific actions, uncomment these
-    // setOpenRoute: (state) => {
-    //   state.welcomePageSliderRoute = "open"; // No payload needed
-    // },
-    // setCloseRoute: (state) => {
-    //   state.welcomePageSliderRoute = "close"; // No payload needed
-    // },
+   
   },
 });
 

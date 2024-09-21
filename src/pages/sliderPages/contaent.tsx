@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react'
+
 import menu_icon from '../../assets/images/menu-icon.png'
 import fill_setion_icon from '../../assets/images/fill-setion-icon.png'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {setRoute} from '../../slice/welcomePageSliderSlice.ts'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 import WelcomePage from '../pages/welcomePage/welcomePage';
 import EmailPage from '../pages/emailPage/emailPage';

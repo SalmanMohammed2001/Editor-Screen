@@ -4,7 +4,7 @@ import close_icon from "../../assets/images/close-icon.png"
 import {useDispatch, useSelector} from 'react-redux';
 import {setRoute} from '../../slice/welcomePageSliderSlice.ts'
 import {setDetails} from '../../slice/emailPageSliderSlice.ts'
-import {Link, Navigate} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 
 const EmailPageSlider = () => {
 
