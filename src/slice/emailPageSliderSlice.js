@@ -4,6 +4,7 @@ let  initialState={
     details:{
         title:'Enter your Email',
         description:'This will be used contact you for the next steps',
+        email:''
        
     }
 };
