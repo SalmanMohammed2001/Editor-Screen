@@ -2,10 +2,10 @@ import React, {useEffect, useRef, useState} from 'react'
 import settion_icon from "../../assets/images/fill-setion-icon.png"
 import close_icon from "../../assets/images/close-icon.png"
 import {useDispatch, useSelector} from 'react-redux';
-import {setRoute} from '../../slice/welcomePageSliderSlice'
-import {setUser} from '../../slice/userSlice'
-import {removeImageUrl} from '../../slice/userSlice'
-import {setImageRoute} from "../../slice/imageSectionSlice"
+import {setRoute} from '../../slice/welcomePageSliderSlice.ts'
+import {setUser} from '../../slice/userSlice.ts'
+import {removeImageUrl} from '../../slice/userSlice.ts'
+import {setImageRoute} from "../../slice/imageSectionSlice.ts"
 import {Link} from 'react-router-dom';
 
 
@@ -17,7 +17,7 @@ const WelcomePageSlider = () => {
     const dispatch = useDispatch();
 
     // const [previewUrl, setPreviewUrl] = useState("");
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<any>({
         title: value.title,
         description: value.description,
         buttonText: value.buttonText,

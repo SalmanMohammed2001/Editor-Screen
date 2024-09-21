@@ -28,7 +28,7 @@ const navLink = [
 
 const Slidebar = () => {
 
-    const FormpageRoute = useSelector(((state) => state.WelcomePageSliderInfo.welcomePageSliderRoute));
+    const FormpageRoute = useSelector(((state:any) => state.welcomePageSliderInfo.welcomePageSliderRoute));
 
 
     return (

@@ -46,5 +46,3 @@ const WelcomePage = () => {
 
 export default WelcomePage;
 
-// Welcome to our form
-// This is a description of the form
